@@ -13,7 +13,8 @@ class alien {
   
   float amplitude = random(200);
   float period = random(50, 100);
-
+  float waveX;
+  
 alien(int xPos, int yPos){
   startX = xPos;
   startY = yPos;
@@ -24,6 +25,7 @@ alien(int xPos, int yPos){
 } 
 
 void moveDown(){
+  waveX = amplitude * cos(TWO_PI * frameCount / period);
   rect(startX, startY, width, height);
   startY +=1;
 }

@@ -7,15 +7,21 @@ class bullet {
 
   int x;
   int y = 500;
-
-  bullet() {
-   
+  
+  bullet(int start) {
+   x = start;
     print("bullet Made");
   }
 
-  void fire(int spawn) {
-    rect(spawn, y, bulletW, bulletH, bulletR);
+
+// moves bullet up the screen
+  void advance(){
+    render();
     y -= 6;
-    print("Pew~");
+    
+  }
+  
+  void render(){
+    rect(x, y, bulletW, bulletH, bulletR);
   }
 }
